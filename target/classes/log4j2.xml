@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <File name="File" filename="logs/root.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <logger name="tech.bmatch.photo.Application" level="info" additivity="false">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="File"/>
+        </logger>
+        <Root level="error">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="File"/>
+
+        </Root>
+        <Root level="INFO">
+            <AppenderRef ref="Console" />
+        </Root>
+    </Loggers>
+</Configuration>
